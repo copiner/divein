@@ -3,16 +3,31 @@
   pro: webpack ./src/index.js -o ./build/bound.js --mode=production
 */
 
-import data from './static/name.json'
+import data from './static/name.json';
 
-console.log(data);
+import './icon/iconfont.css'; // font
 
-import './icon/iconfont.css' //font
+import './css/index.css';
+import './css/name.css';
 
-import './css/index.css'
+//console.log(data);
 
-function add(x,y){
-    return x + y;
+function add(x, y) {
+  return x + y;
 }
 
-console.log(add(1,2));
+//console.log(add(1, 2));
+
+const dul = (x, y) => {
+  return x * y;
+};
+
+//console.log(dul(2,4));
+
+const porm = new Pormise(resolve)=>{
+  setTimeout(()=>{
+    resolve()
+  },1000)
+}
+
+pro().then().catch()

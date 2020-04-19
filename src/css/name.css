@@ -1,0 +1,7 @@
+.name{
+    width:200px;
+    height:200px;
+    background-color:pink;
+    display: flex;
+    backface-visibility: hidden;
+}

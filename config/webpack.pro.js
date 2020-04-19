@@ -1,9 +1,6 @@
-/*
-  所有构建工具都是基于node平台运行，
-  模块化默认采用commomjs
-*/
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const { resolve } = require('path');
 
@@ -11,23 +8,38 @@ module.exports = {
     entry:'./src/index.js',
     output:{
         filename:'index.js',
-        path:resolve(__dirname,'build')
+        path:resolve(__dirname,'../build')
     },
     //loader
     module:{
         rules:[
             {
+              test:/\.js$/,
+              exclude:/node_modules/,
+              loader:'eslint-loader',
+              options:{
+                  fix:true//鑷姩淇
+              }
+            },
+            {
                 test:/\.css$/,
                 use:[
-                    'style-loader',
-                    'css-loader'
+                    //'style-loader',//insert create <style> --> <head>
+                    MiniCssExtractPlugin.loader,//replace style-loader <link>  //bug path
+                    'css-loader',//css->js
+                    {
+                      loader:'postcss-loader',
+                      options:{
+                        ident:'postcss'
+                      }
+                    }
                 ]
             },
             {
                 test:/\.(jpg|png)$/,
                 loader:'url-loader',
                 options:{
-                    //options 
+                    //options
                     limit:8*1024,
                     esModule:true,
                     name:'[hash:10].[ext]',
@@ -51,16 +63,15 @@ module.exports = {
     plugins:[
         new HtmlWebpackPlugin({
             //options
-            template:'./src/index.html'
+            template:'./src/index.html',
+            minify:false
+        }),
+        new MiniCssExtractPlugin({
+            //options
+            filename:'css/index.css'
         })
     ],
 
     //mode
-    mode:'development',
-    //RAM
-    devServer:{
-        contentBase:resolve(__dirname,'build'),
-        compress:true,
-        port:3000
-    }
+    mode:'production'
 }
