@@ -1,0 +1,33 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1587255872591'); /* IE9 */
+  src: url('iconfont.eot?t=1587255872591#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAOsAAsAAAAACNgAAANgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDGgqFDIRvATYCJAMUCwwABCAFhG0HSxvmBxEVnDvIPhJyU5rPOf6qaKIxM5QS4snuq153D3Zm6WhP8seBzGRmsCPAm3M9gXxhol6O5OyTR9926cbppRn9z+HSpqfZ/JYF1vOM12/tZYN6YRj2AurFe93mO7IhcoJ8HmNkmcgwdhN5kC9DAI9sCiI1azcM4GIA2wSQvr16dMJNmDEVtYKLYBecNchsLFw1RV0EZnk/L68pLi4oLA3Y27R7ra5Ufbbi2Wo9+v9o2p4ADucElEuggYKAAWld6A6gg3RBNJ6VNuSFZS0TeLb6/394toJKFvsPDwSFxoDYAHUkT61qNBwTYi4Enq3kQsGzVSb0gSIvfRhqi272gCjgOkhlkZqDz6TAFE2PjNQ1xcZ6Dw3xbt4M3LoV9O/cCcuiRb4/bUFihu7dvh1q9PMvFBmzKSloZ2D+xtCQMmSSGsUwer7nTS1rDszfmi7LtiW1airqgH1hW5E/kZs3WxPukq8LdZcO1yuQ7NcD+RcRXrQljcWbkwMjzQ8E2/8+86R9e6kjtf/h2vK0urQJOFWVNcmOtydbTnDEwJA8baNGjZLW0gZ72sjxSzXtrIjkbp06hcM70C3Zy3RqEF5byZnsxHLao94dDWeGfnxUO+Xjj9JLRqm1a9WoCCUiLVFB8Zn64EFNxUyJeLk4hadnDOtYnv8dOlgL/x5Vu9rrN2tVahhn+jScIakSTXYqAYb2B0vP6FhOtowERHVTNc7jf/UvBBAosXnBkQ4xFb+6vgHg/rEDVTmzoXnGRYGCPwo27DK2DFgsY7ZjiemxKBvbjgI8POA/wB/P42G0SY2TILgJVEDhkAUalxyioRYEC5+SYONSBTwKUOeyTwKD0YiJAPIzgQMhll2giOYIaGK5RDTUR2CRzFuwiRUNHpa/XO48c5XydGNUghnoGUpDna1NTn7tG/O+URyXeYw/si9jEAdROvfCDnmIA37IExELlqmFJ/c6bBoCx1ShkaAQcWkY2qIvCgy1ixM3GEQhIBmAZgYoMRAdlg4WTpnvf4Pk9DQouKKjxfsHYTzl+EBMQNSA+FJ3jTouZbFnICdBEKy4ycIQLcCTdyINTBOAK15VgRiEgKJD0pESCr1sU3Uwvba9xyOAB/hES5RoMWKJzaYvkTt0OImnLt+4Rs0HxziU1PvFAg==') format('woff2'),
+  url('iconfont.woff?t=1587255872591') format('woff'),
+  url('iconfont.ttf?t=1587255872591') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1587255872591#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-loop:before {
+  content: "\e69d";
+}
+
+.icon-nextsong:before {
+  content: "\e69e";
+}
+
+.icon-play:before {
+  content: "\e69f";
+}
+
+.icon-previous:before {
+  content: "\e6a0";
+}
+
