@@ -1,3 +1,6 @@
+/*
+oneOf
+*/
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -13,6 +16,7 @@ module.exports = {
     //loader
     module:{
         rules:[
+          //oneOf:[],
             {
               test:/\.js$/,
               exclude:/node_modules/,
@@ -64,7 +68,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             //options
             template:'./src/index.html',
-            minify:false
+            minify:{
+              collapseWhitespace:true,
+              removeComments:true
+            }
         }),
         new MiniCssExtractPlugin({
             //options
@@ -73,5 +80,6 @@ module.exports = {
     ],
 
     //mode
-    mode:'production'
+    mode:'production',//生成模式，默认会加载一些插件，比如压缩js代码的UgfilyJsPlugin
+    devtool:'source-map'
 }
