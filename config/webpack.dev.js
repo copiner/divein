@@ -1,27 +1,6 @@
 /*
   所有构建工具都是基于node平台运行，
   模块化默认采用commomjs
-
-  HMR
-
-  CSS style-loader内部实现了样式模块HMR
-  JS 没有实现HMR,针对非入口文件，则通过以下实例实现
-  if(module.hot){
-    //module.hot 为 true 则开启HMR功能
-    module.hot.accept('./js/index.js',()=>{
-      //监听index.js变化，发生变化，执行该回调函数
-      ...
-    })
-  }
-
-  source map 英语翻译
-  实现源代码与构建后代码之间的映射关系
-  source-map
-  inline-source-map
-  hidden-source-map
-  eval-source-map
-  cheap-source-map
-
 */
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -35,7 +14,7 @@ process.env.NODE_ENV = "development";
 module.exports = {
     entry: './src/index.js',
     output:{
-        filename:'index.js',
+        filename:'index-[hash].js',
         path:resolve(__dirname,'../build')
     },
     //loader
@@ -61,6 +40,7 @@ module.exports = {
                     //     useBuiltIns:'useage'
                     //   }]
                     // ]
+                    cacheDirectory:true//缓存
                   }
                 },
                 // {
@@ -121,6 +101,11 @@ module.exports = {
     //mode
     mode:'development',
     devtool:'eval-source-map',
+    optimization:{
+      splitChunks:{
+        chunks:'all'//将node_modules内容单独打包
+      }
+    },
     //RAM
     devServer:{
         contentBase:resolve(__dirname,'build'),

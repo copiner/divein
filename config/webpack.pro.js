@@ -10,20 +10,29 @@ const { resolve } = require('path');
 module.exports = {
     entry:'./src/index.js',
     output:{
-        filename:'index.js',
+        filename:'index-[contentHash:10].js',
         path:resolve(__dirname,'../build')
     },
     //loader
     module:{
         rules:[
-          //oneOf:[],
+            //oneOf:[],
             {
               test:/\.js$/,
               exclude:/node_modules/,
-              loader:'eslint-loader',
-              options:{
-                  fix:true//自动修复
-              }
+              use:[
+                {
+                  loader:'babel-loader',
+                  options:{}
+                },
+                // {
+                //   loader:'eslint-loader',
+                //   options:{
+                //       fix:true//自动修复
+                //   }
+                // }
+              ]
+
             },
             {
                 test:/\.css$/,
@@ -75,7 +84,7 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             //options
-            filename:'css/index.css'
+            filename:'index-[contentHash:10].css'
         })
     ],
 
