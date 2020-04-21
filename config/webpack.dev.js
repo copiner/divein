@@ -6,8 +6,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 //const PostcssPresetEnv = require('postcss-preset-env');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
-
+const AddAssetHtmlWebpackkPlugin = require('add-asset-html-webpack-plugin');
 const { resolve } = require('path');
+const webpack = require('webpack');
 
 process.env.NODE_ENV = "development";
 
@@ -94,18 +95,28 @@ module.exports = {
             //options
             template:'./src/index.html'
         }),
-        //压缩css
-        //new OptimizeCssAssetsWebpackPlugin()
+        // new webpack.DllReferencePlugin({
+        //   manifest:resolve(__dirname,'../dll/manifest.json')
+        // }),
+        // new AddAssetHtmlWebpackkPlugin([
+        //   {filepath:resolve(__dirname,'../dll/jquery.js')},
+        //   {filepath:resolve(__dirname,'../dll/React.js')}
+        // ])
     ],
 
     //mode
     mode:'development',
     devtool:'eval-source-map',
-    optimization:{
-      splitChunks:{
-        chunks:'all'//将node_modules内容单独打包
-      }
-    },
+    // optimization:{
+    //   splitChunks:{
+    //     chunks:'all'//将node_modules内容单独打包
+    //   }
+    // },
+    // externals:{
+    //   //不打包jQqery,则需要手动引入
+    //   jquery:'jQuery'
+    // },
+
     //RAM
     devServer:{
         contentBase:resolve(__dirname,'build'),

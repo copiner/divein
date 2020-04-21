@@ -6,6 +6,8 @@
 import data from './static/name.json';
 import sum from './js';
 import { add } from './js/cal';
+
+import React, {Component} from 'react'
 import $ from 'jquery'
 
 console.log($);
