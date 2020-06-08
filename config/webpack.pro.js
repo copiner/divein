@@ -85,7 +85,10 @@ module.exports = {
         new MiniCssExtractPlugin({
             //options
             filename:'index-[contentHash:10].css'
-        })
+        }),
+        // new webpack.DllReferencePlugin({
+        //   manifest:resolve(__dirname,'../dll/manifest.json')
+        // })
     ],
 
     //mode

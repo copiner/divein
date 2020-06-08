@@ -12,7 +12,7 @@ const webpack = require('webpack');
 module.exports = {
     entry: {
       jquery:['jquery'],
-      React:['React']
+      react:['react']
     },
     output:{
         filename:'[name].js',

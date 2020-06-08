@@ -6,7 +6,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 //const PostcssPresetEnv = require('postcss-preset-env');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
-const AddAssetHtmlWebpackkPlugin = require('add-asset-html-webpack-plugin');
 const { resolve } = require('path');
 const webpack = require('webpack');
 
@@ -97,11 +96,7 @@ module.exports = {
         }),
         // new webpack.DllReferencePlugin({
         //   manifest:resolve(__dirname,'../dll/manifest.json')
-        // }),
-        // new AddAssetHtmlWebpackkPlugin([
-        //   {filepath:resolve(__dirname,'../dll/jquery.js')},
-        //   {filepath:resolve(__dirname,'../dll/React.js')}
-        // ])
+        // })
     ],
 
     //mode
